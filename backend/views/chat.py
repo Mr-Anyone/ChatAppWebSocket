@@ -12,4 +12,5 @@ def connect():
 
 @socket.on("disconnect")
 def disconnect():
-    pass 
+    print(session)
+    emit("testing", "this is another test I guess")
