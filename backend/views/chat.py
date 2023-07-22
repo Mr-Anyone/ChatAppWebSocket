@@ -21,7 +21,7 @@ def disconnect():
 def set_username(username):
     id_to_username_table[request.sid] = username
 
-@chat_blueprint("username")
+@chat_blueprint("/username")
 def get_username():
     if request.sid in id_to_username_table:
         return  id_to_username_table[request.sid]
