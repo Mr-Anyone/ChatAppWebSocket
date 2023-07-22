@@ -4,12 +4,15 @@ import Button from "react-bootstrap/Button";
 import { socket } from "../socket";
 import { useState } from "react";
 
-function SignupForm({setSocketId}){
+function SignupForm({setSocketId, setUserName}){
     function onButtonClick(){
         socket.connect()
         
         let username = document.getElementById("usernameForm").value
         socket.emit("username", username)
+        
+        // this is terrible code as it always assume it will work even thoguh this might not be the case
+        setUserName(username)
     }
     
     function onConnect(){

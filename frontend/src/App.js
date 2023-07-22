@@ -10,11 +10,12 @@ import { useState } from "react";
 
 function App() {
   let [socket_id, setSocketId] = useState("");
+  let [username, setUserName] = useState("");
 
   return (
     <Container>
-      <UserNameBar socket_id={socket_id}></UserNameBar>
-      <SignupForm setSocketId={setSocketId}></SignupForm>
+      <UserNameBar socket_id={socket_id} username={username}></UserNameBar>
+      <SignupForm setSocketId={setSocketId} setUserName={setUserName}></SignupForm>
     </Container>
   );
 }
