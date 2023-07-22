@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container"
 import SignupForm from "./components/Signup";
 import UserNameBar from "./components/UsernameBar";
 import { useState } from "react";
+import UserList from "./components/UserList";
 
 function App() {
   let [socket_id, setSocketId] = useState("");
@@ -16,6 +17,7 @@ function App() {
     <Container>
       <UserNameBar socket_id={socket_id} username={username}></UserNameBar>
       <SignupForm setSocketId={setSocketId} setUserName={setUserName}></SignupForm>
+      <UserList></UserList>
     </Container>
   );
 }
