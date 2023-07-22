@@ -2,15 +2,27 @@ import Container from "react-bootstrap/esm/Container";
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button";
 import { socket } from "../socket";
+import { useState } from "react";
 
-function SignupForm(){
-    
+function SignupForm({setSocketId}){
     function onButtonClick(){
         socket.connect()
         
         let username = document.getElementById("usernameForm").value
         socket.emit("username", username)
     }
+    
+    function onConnect(){
+        setSocketId(socket.id)
+    }
+
+    useState(() => {
+        socket.on("connect", onConnect)
+
+        return () => {
+            socket.off("connect", onConnect)
+        }
+    }, [])
 
     return (
         <Form>
