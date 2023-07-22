@@ -12,5 +12,9 @@ def connect():
 
 @socket.on("disconnect")
 def disconnect():
-    print(session)
     emit("testing", "this is another test I guess")
+
+@socket.on("username")
+def get_username(username):
+    print(session)
+    print(username)
