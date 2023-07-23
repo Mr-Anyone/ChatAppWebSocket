@@ -25,7 +25,7 @@ function SendForm() {
     </>);
 }
 
-function MessageView({socket_id, username, messages}) {
+function MessageView({talk_to, messages}) {
     function receiveMessage(message) {
         console.log(message)
     }
@@ -37,10 +37,14 @@ function MessageView({socket_id, username, messages}) {
         }
     }, [])
 
+    let username; 
+    if ("username" in talk_to) {
+        username = talk_to.username;
+    }
 
     return (
         <Container className="border">
-            <h1 className="text-center display-1">Username</h1>
+            <h1 className="text-center display-1">{username}</h1>
 
             <SendForm></SendForm>
         </Container>

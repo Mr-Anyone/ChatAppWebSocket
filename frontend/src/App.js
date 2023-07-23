@@ -17,18 +17,20 @@ function App() {
   let [current_username, setCurrentUsername] = useState("");
   let [other_usernames, setOtherUsernames] = useState([]);
 
-  
+  // set who is being talked to
+  let [talk_to, setTalkTo] = useState({});
+
   return (
     <Row>
       <Col xs={4}>
         <Container>
           <UserNameBar socket_id={socket_id} username={current_username}></UserNameBar>
           <SignupForm setSocketId={setSocketId} setUserName={setCurrentUsername}></SignupForm>
-          <UserList usernames={other_usernames} setUserNames={setOtherUsernames}> </UserList>
+          <UserList usernames={other_usernames} setUserNames={setOtherUsernames} setTalkTo={setTalkTo}> </UserList>
         </Container>
       </Col>
       <Col xs={8}>
-        <MessageView></MessageView>
+        <MessageView talk_to={talk_to}></MessageView>
       </Col>
     </Row>
   );

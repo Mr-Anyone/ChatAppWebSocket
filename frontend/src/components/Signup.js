@@ -29,6 +29,7 @@ function SignupForm({ setSocketId, setUserName }) {
 
     return (
         <Container>
+            <h1 className="text-center">Sign in</h1>
             <Form>
                 <Form.Group className="pb-3">
                     <Form.Label>Username: </Form.Label>
