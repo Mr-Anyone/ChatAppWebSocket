@@ -11,6 +11,7 @@ import UserList from "./components/UserList";
 import MessageView from "./components/MessageView";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CreateGroupForm from "./components/CreateGroup";
 
 function App() {
   let [socket_id, setSocketId] = useState("");
@@ -25,12 +26,13 @@ function App() {
       <Col xs={4}>
         <Container>
           <UserNameBar socket_id={socket_id} username={current_username}></UserNameBar>
+          <CreateGroupForm></CreateGroupForm>
           <SignupForm setSocketId={setSocketId} setUserName={setCurrentUsername}></SignupForm>
           <UserList usernames={other_usernames} setUserNames={setOtherUsernames} setTalkTo={setTalkTo}> </UserList>
         </Container>
       </Col>
       <Col xs={8}>
-        <MessageView talk_to={talk_to}></MessageView>
+        <MessageView talk_to={talk_to} current_user={current_username}></MessageView>
       </Col>
     </Row>
   );
