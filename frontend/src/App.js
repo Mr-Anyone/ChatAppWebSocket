@@ -14,16 +14,17 @@ import Col from "react-bootstrap/Col";
 
 function App() {
   let [socket_id, setSocketId] = useState("");
-  let [username, setUserName] = useState("");
-  let [usernames, setUserNames] = useState([]);
+  let [current_username, setCurrentUsername] = useState("");
+  let [other_usernames, setOtherUsernames] = useState([]);
 
+  
   return (
     <Row>
       <Col xs={4}>
         <Container>
-          <UserNameBar socket_id={socket_id} username={username}></UserNameBar>
-          <SignupForm setSocketId={setSocketId} setUserName={setUserName}></SignupForm>
-          <UserList usernames={usernames} setUserNames={setUserNames}> </UserList>
+          <UserNameBar socket_id={socket_id} username={current_username}></UserNameBar>
+          <SignupForm setSocketId={setSocketId} setUserName={setCurrentUsername}></SignupForm>
+          <UserList usernames={other_usernames} setUserNames={setOtherUsernames}> </UserList>
         </Container>
       </Col>
       <Col xs={8}>

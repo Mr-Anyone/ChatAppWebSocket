@@ -3,8 +3,8 @@ import { socket } from "../socket";
 
 function UserNameBar({socket_id, username}){
     return (<Container>
-        <h1>Socket id: {socket_id}</h1>
-        <h1>Username: {username}</h1>
+        <p>Socket id: {socket_id}</p>
+        <p>Username: {username}</p>
     </Container>)
 }
 
