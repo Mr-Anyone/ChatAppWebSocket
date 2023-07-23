@@ -2,8 +2,7 @@ import Container from "react-bootstrap/Container";
 import { socket } from "../socket";
 import { useEffect, useState } from "react";
 
-function UserList() {
-    let [usernames, setUserNames] = useState([]);
+function UserList({usernames, setUserNames}) {
 
     function onUpdateTable(got_username) {
         console.log(got_username)

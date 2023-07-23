@@ -1,4 +1,4 @@
-import {socket} from "./socket";
+import { socket } from "./socket";
 
 // bootstrap stuff
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,17 +8,28 @@ import SignupForm from "./components/Signup";
 import UserNameBar from "./components/UsernameBar";
 import { useState } from "react";
 import UserList from "./components/UserList";
+import MessageView from "./components/MessageView";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function App() {
   let [socket_id, setSocketId] = useState("");
   let [username, setUserName] = useState("");
+  let [usernames, setUserNames] = useState([]);
 
   return (
-    <Container>
-      <UserNameBar socket_id={socket_id} username={username}></UserNameBar>
-      <SignupForm setSocketId={setSocketId} setUserName={setUserName}></SignupForm>
-      <UserList></UserList>
-    </Container>
+    <Row>
+      <Col xs={4}>
+        <Container>
+          <UserNameBar socket_id={socket_id} username={username}></UserNameBar>
+          <SignupForm setSocketId={setSocketId} setUserName={setUserName}></SignupForm>
+          <UserList usernames={usernames} setUserNames={setUserNames}> </UserList>
+        </Container>
+      </Col>
+      <Col xs={8}>
+        <MessageView></MessageView>
+      </Col>
+    </Row>
   );
 }
 

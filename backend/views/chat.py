@@ -33,4 +33,7 @@ def get_username():
         return ""
     return ""
 
-    return_list = []
+@socket.on("send_message")
+def send_message(message):
+    # from, to, message 
+    emit("receive_message", message, to=message["to"])
