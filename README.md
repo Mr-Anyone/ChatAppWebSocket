@@ -10,3 +10,15 @@ This is built with react.js
 ## Backend 
 
 This was built with flask. 
+
+## how to run 
+
+go into the frontend folder and do the following 
+
+`npm install`
+`npm start`
+
+go into the backend folder and just run it like this 
+
+`pip3 install -r requirements.txt`
+`python3 backend/server.py`
