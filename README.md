@@ -1,4 +1,4 @@
-# Chat App
+# Real Time Chat App
 ![Fronend Interface](ChatApp.png)
 
 This project was built with react and flask. The app support multiple users all concurrently. The backend does not store any logs or anything. 
